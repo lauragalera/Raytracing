@@ -1,0 +1,90 @@
+
+
+<html>
+	<head>
+		<title>Ray Tracing Example</title>
+	</head>
+
+	<body>
+		<h1>Ray Tracing</h1>
+			<table>
+				<tr>
+					<td>
+					<canvas id="glcanvas" style="border: solid;" width="400" height="400"></canvas>
+						<p><strong>Max Depth of Bouncing</strong></p>
+						Bounces <input type="number" name= "depth" step="1" style="width: 3.8em" min="0" max="10" value="2">
+					</td>
+					<td>
+						<div style="margin: 5px">
+							<p>
+								<strong>Camera</strong>
+							</p>
+							<p>
+								Press "a" to move to the left and "d" to move to the right. "w" to move to the <br>front and "s" to move backwards. Press "q" to move up and "e" to move down.
+							</p>
+							<p>
+								Use "f" to rotate to the left and "g" to rotate to the right. "t" rotates the <br> camera up and "v" down.
+							</p>
+							<select id = "selectCameras" size = "6" style="margin-left: 20px;">
+								<option value = "0">Start Camera</option>
+								<option value = "1">Triangle right</option>
+								<option value = "2">Ruby sphere</option>
+								<option value = "3">2 spheres</option>
+								<option value = "4">Jade sphere</option>
+								<option value = "5">Refractive sphere</option>
+								<option value = "6">Front sphere</option>
+								<option value = "8">Left side</option>
+								<option value = "9">Right side</option>
+								<option value = "10">Back</option>
+							</select>
+							<p>
+								<strong>Light 1</strong>
+								<br>
+								Ambient: <input type="color" name="La1" value="#808080">
+								Diffuse: <input type="color" name="Ld1" value="#808080">
+								Specular: <input type="color" name="Ls1" value="#808080">
+								X <input type="number" name= "La1X" step="0.05" style="width: 3.8em">
+								Y <input type="number" name= "La1Y" step="0.05" style="width: 3.8em">
+								Z <input type="number" name= "La1Z" step="0.05" style="width: 3.8em">
+								On/Off <input type="checkbox" name = "OnL1" checked><br>
+							</p>
+							<p>
+								<strong>Light 2</strong>
+								<br>
+								Ambient: <input type="color" name="La2" value="#1A4D80">
+								Diffuse: <input type="color" name="Ld2" value="#1A1A1A">
+								Specular: <input type="color" name="Ls2" value="#808080">
+								X <input type="number" name= "La2X" step="0.05" style="width: 3.8em">
+								Y <input type="number" name= "La2Y" step="0.05" style="width: 3.8em">
+								Z <input type="number" name= "La2Z" step="0.05" style="width: 3.8em">
+								On/Off <input type="checkbox" name = "OnL2" checked><br>
+							</p>
+						</div>
+					<button onclick="start()"> Start </button>
+					</td>
+				</tr>
+			</table>
+		<script type="text/javascript" src="raytracingV2.js"></script>
+		
+		<script src="gl-matrix/common.js"></script>
+		<script type="text/javascript" src="gl-matrix/vec3.js"></script>
+		<script type="text/javascript" src="gl-matrix/vec2.js"></script>
+		<script type="text/javascript" src="gl-matrix/vec4.js"></script>
+		<script type="text/javascript" src="gl-matrix/vec4.js"></script>
+		<script type="text/javascript" src="gl-matrix/mat4.js"></script>
+		<script type="text/javascript" src="gl-matrix/mat3.js"></script>
+		<script type="text/javascript" src="gl-matrix/quat.js"></script>
+		<script type="text/javascript" src="materials.js"></script>
+		<script type="text/javascript" src="control-camera.js"></script>
+		<script type="text/javascript" src="scene.js"></script>
+		<script type="text/javascript" src="raytracingV2.js"></script>
+		<script type="text/javascript">
+
+			function start () {
+				// Inicialitzem el RayTracing
+				inicialitzar(Scene);
+			}
+		</script>
+
+	</body>
+</html>
